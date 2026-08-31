@@ -6,8 +6,9 @@ Este espacio contiene el Game Design Document (GDD) del proyecto y el prototipo 
 
 ## 📂 Contenido del Repositorio
 
-* `GDD_Zen_Drift_-_Emiliano_Arias.pdf`: Documento principal del Game Design Document (GDD), detallando el high concept, la narrativa, las mecánicas core, el diseño de niveles y la dirección de arte y audio.
+* `Imagenes de referencia/`: Referencias e inspiraciones que contribuyeron a la visión del gameplay y/o arte.
 * `Proyecto/`: Proyecto de Godot 4 con el prototipo jugable (escenas, scripts y recursos).
+* `GDD_Zen_Drift_-_Emiliano_Arias.pdf`: Documento principal del Game Design Document (GDD), detallando el high concept, la narrativa, las mecánicas core, el diseño de niveles y la dirección de arte y audio.
 
 
 ## 🎮 Sobre el prototipo
