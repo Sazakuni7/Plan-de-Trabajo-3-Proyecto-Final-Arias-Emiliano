@@ -25,7 +25,7 @@ El prototipo se enfoca en validar el *core loop* del GDD (Explorar → Combatir 
 * HUD funcional (vida, energía, contenedores, puntaje, afinidad activa).
 
 El arte y el audio son mayormente *placeholders* (formas geométricas y materiales de color plano) mientras se termina de afinar el gameplay.
-Ciertos elementos como objetos sólidos, texturas y modelo de personaje los obtuve de tutoriales de gdquest.com, algunos shaders de godotshaders.com y otros efectos de itch.io
+Ciertos elementos como objetos sólidos, texturas y modelo de personaje los obtuve de tutoriales de [GDQuest](https://gdquest.com/), algunos shaders de [Godot Shaders](https://godotengine.org/) y otros efectos de [itch.io](https://itch.io/)
 
 ## 🛠️ Tecnología
 
