@@ -2,7 +2,7 @@
 
 Repositorio correspondiente al desarrollo del proyecto de videojuegos **Zen Drift** para la Tecnicatura en Diseño y Programación de Videojuegos (Universidad Nacional del Litoral, Facultad de Ingeniería y Ciencias Hídricas).
 
-Este espacio contiene el Game Design Document (GDD) del proyecto y el prototipo jugable desarrollado en Godot 4, un roguelite de acción individual que explora el cambio dinámico entre tres afinidades elementales (Agua, Tierra y Fuego/Luz) como mecánica núcleo de combate y supervivencia.
+Este espacio contiene el Game Design Document (GDD) del proyecto y el prototipo jugable desarrollado en Godot 4, un roguelite de acción individual de hordas que explora el cambio dinámico entre tres afinidades elementales (Agua, Tierra y Fuego/Luz) como mecánica núcleo de combate y supervivencia.
 
 ## 📂 Contenido del Repositorio
 
@@ -13,6 +13,7 @@ Este espacio contiene el Game Design Document (GDD) del proyecto y el prototipo 
 
 ## 🎮 Sobre el prototipo
 
+**Importante::** Por cuestiones de tiempo de desarrollo, el gameplay consta de un nivel estilo tutorial finalizando con oleadas de enemigos.
 El prototipo se enfoca en validar el *core loop* del GDD (Explorar → Combatir → Recolectar → Adaptarse → Progresar), priorizando la jugabilidad por sobre el arte y el audio finales. Actualmente incluye:
 
 * Movimiento en tercera persona con cámara controlada por mouse/joystick.
