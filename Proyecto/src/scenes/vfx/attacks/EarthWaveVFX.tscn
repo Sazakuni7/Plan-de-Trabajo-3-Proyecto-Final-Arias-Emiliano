@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ju0mqu8aalgb"]
+
+[ext_resource type="PackedScene" uid="uid://b7jw20eo0o7st" path="res://src/VFXPacks/assets/BinbunVFX/magic_projectiles/effects/mprojectile_wave/mprojectile_wave_vfx_03.tscn" id="1_vfx"]
+
+[node name="EarthWaveVFX" unique_id=468094387 instance=ExtResource("1_vfx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+light_color = Color(0.7764706, 0.84313726, 0.21176471, 1)
+
+[node name="Light" parent="." index="4" unique_id=539677132]
+light_color = Color(0.7764706, 0.84313726, 0.21176471, 1)

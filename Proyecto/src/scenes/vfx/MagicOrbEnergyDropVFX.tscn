@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://pn8b0nu5nok"]
+
+[sub_resource type="GDScript" id="GDScript_uht21"]
+script/source = "@tool
+extends Node3D
+
+enum OrbPalette { WATER, EARTH, FIRE, CUSTOM }
+
+@export var palette := OrbPalette.WATER:
+	set(value):
+		palette = value
+		_apply_palette()
+
+@export var custom_primary_color := Color.WHITE:
+	set(value):
+		custom_primary_color = value
+		_apply_palette()
+
+@export var custom_secondary_color := Color(0.8, 0.8, 0.8):
+	set(value):
+		custom_secondary_color = value
+		_apply_palette()
+
+@export var custom_tertiary_color := Color(0.5, 0.5, 0.5):
+	set(value):
+		custom_tertiary_color = value
+		_apply_palette()
+
+@export var light_energy := 1.4:
+	set(value):
+		light_energy = value
+		_apply_palette()
+
+@onready var effect: Node3D = $MagicOrbFlashVFX_03
+
+
+func _ready() -> void:
+	_make_effect_resources_unique()
+	_apply_palette()
+
+
+func set_affinity(affinity: int) -> void:
+	match affinity:
+		AffinityManager.Affinity.WATER:
+			palette = OrbPalette.WATER
+		AffinityManager.Affinity.EARTH:
+			palette = OrbPalette.EARTH
+		AffinityManager.Affinity.FIRE:
+			palette = OrbPalette.FIRE
+		_:
+			palette = OrbPalette.WATER
+
+
+func set_active(is_active: bool) -> void:
+	visible = is_active
+	if effect == null:
+		return
+	var animation_player := effect.get_node_or_null(\"AnimationPlayer\") as AnimationPlayer
+	if animation_player != null and is_active:
+		animation_player.play(\"main\")
+
+
+func _apply_palette() -> void:
+	if not is_inside_tree() or effect == null:
+		return
+	var colors := _get_palette_colors()
+	effect.set(\"primary_color\", colors[0])
+	effect.set(\"secondary_color\", colors[1])
+	effect.set(\"tertiary_color\", colors[2])
+	effect.set(\"light_color\", colors[1])
+	effect.set(\"light_energy\", light_energy)
+	for node in effect.find_children(\"*\", \"\", true, false):
+		if node is MeshInstance3D:
+			_apply_palette_to_material(node.material_override as ShaderMaterial, colors)
+		elif node is OmniLight3D:
+			node.light_color = colors[1]
+			node.light_energy = light_energy
+
+
+func _get_palette_colors() -> Array[Color]:
+	match palette:
+		OrbPalette.WATER:
+			return [Color(0.82, 0.98, 1.0), Color(0.16, 0.62, 1.0), Color(0.02, 0.18, 0.82)]
+		OrbPalette.EARTH:
+			return [Color(0.84, 1.0, 0.45), Color(0.32, 0.8, 0.18), Color(0.42, 0.28, 0.12)]
+		OrbPalette.FIRE:
+			return [Color(1.0, 0.88, 0.52), Color(1.0, 0.36, 0.05), Color(0.55, 0.04, 0.02)]
+		OrbPalette.CUSTOM:
+			return [custom_primary_color, custom_secondary_color, custom_tertiary_color]
+	return [Color.WHITE, Color(0.8, 0.8, 0.8), Color(0.5, 0.5, 0.5)]
+
+
+func _apply_palette_to_material(material: ShaderMaterial, colors: Array[Color]) -> void:
+	if material == null:
+		return
+	_set_shader_parameter_if_present(material, \"primary_color\", colors[0])
+	_set_shader_parameter_if_present(material, \"secondary_color\", colors[1])
+	_set_shader_parameter_if_present(material, \"tertiary_color\", colors[2])
+
+
+func _set_shader_parameter_if_present(material: ShaderMaterial, parameter_name: StringName, value: Variant) -> void:
+	for property in material.get_property_list():
+		if property.get(\"name\") == \"shader_parameter/%s\" % parameter_name:
+			material.set_shader_parameter(parameter_name, value)
+			return
+
+
+func _make_effect_resources_unique() -> void:
+	if effect == null:
+		return
+	for node in effect.find_children(\"*\", \"\", true, false):
+		if node is MeshInstance3D:
+			if node.material_override != null:
+				node.material_override = node.material_override.duplicate(true)
+			if node.mesh != null:
+				node.mesh = node.mesh.duplicate(true)
+"
+
+[node name="MagicOrbEnergyDropVFX" type="Node3D" unique_id=1870909800]
+script = SubResource("GDScript_uht21")
+
+[node name="MagicOrbFlashVFX_03" parent="." unique_id=1465889651]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0, 0)
+primary_color = Color(0.82, 0.98, 1, 1)
+secondary_color = Color(0.16, 0.62, 1, 1)
+tertiary_color = Color(0.02, 0.18, 0.82, 1)
+light_color = Color(0.16, 0.62, 1, 1)
+light_energy = 1.4

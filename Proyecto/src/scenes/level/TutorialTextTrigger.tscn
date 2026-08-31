@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cu7vvbay030lj"]
+
+[ext_resource type="Script" uid="uid://b3cyeofv32pws" path="res://src/scripts/world/TutorialTextTrigger.gd" id="1_trigger"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_trigger"]
+radius = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_marker"]
+radius = 0.4
+height = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_marker"]
+transparency = 1
+albedo_color = Color(2.7362049, 2.8158534, 0.42639828, 0.67058825)
+emission_enabled = true
+emission = Color(0.15, 0.35, 0.75, 1)
+
+[node name="TutorialTextTrigger" type="Area3D" unique_id=1149511208]
+script = ExtResource("1_trigger")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1052255765]
+shape = SubResource("SphereShape3D_trigger")
+
+[node name="Visual" type="MeshInstance3D" parent="." unique_id=794869136]
+mesh = SubResource("SphereMesh_marker")
+surface_material_override/0 = SubResource("StandardMaterial3D_marker")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1354960581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
+billboard = 1
+text = "Texto tutorial"
+font_size = 62
+outline_size = 15

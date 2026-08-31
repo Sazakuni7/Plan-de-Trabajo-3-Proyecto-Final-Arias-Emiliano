@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://byt3hffgjsga2"]
+
+[ext_resource type="PackedScene" uid="uid://dd73y25a5fujm" path="res://src/scenes/vfx/StatusEffectAttachment.tscn" id="1_base"]
+
+[node name="EnergyDropStatusEffect" unique_id=925559363 instance=ExtResource("1_base")]
+transform = Transform3D(0.38, 0, 0, 0, 0.38, 0, 0, 0, 0.38, 0, 0, 0)
+emission = 7.0
+
+[node name="VFXStatusShatter" parent="." index="0" unique_id=1512703633]
+secondary_color = Color(0.8, 0.8, 0.8, 1)
+tertiary_color = Color(0.5, 0.5, 0.5, 1)
+emission = 7.0
+emitting = false

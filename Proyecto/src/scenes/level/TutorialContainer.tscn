@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cg0o35gnnr3an"]
+
+[ext_resource type="PackedScene" uid="uid://cwag45bi7fcqc" path="res://src/scenes/level/Container.tscn" id="1_g1ser"]
+
+[node name="TutorialContainer" instance=ExtResource("1_g1ser")]
+counts_for_portal = false

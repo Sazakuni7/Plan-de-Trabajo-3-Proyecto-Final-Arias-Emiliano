@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1a0vx57o6toq"]
+
+[ext_resource type="PackedScene" uid="uid://bf6bbj6ibj60i" path="res://src/scenes/enemies/EnemyBase.tscn" id="1_6x6xi"]
+
+[node name="TutorialEnemyStationary" instance=ExtResource("1_6x6xi")]
+behavior_mode = 0

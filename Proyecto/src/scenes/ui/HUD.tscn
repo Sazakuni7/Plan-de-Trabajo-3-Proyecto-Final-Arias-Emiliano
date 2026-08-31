@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://dooknyrp81wl7"]
+
+[ext_resource type="Script" uid="uid://c4pb45pv8q8hd" path="res://src/scripts/ui/HUD.gd" id="1_jommb"]
+[ext_resource type="Texture2D" uid="uid://dwqoyxrqwtman" path="res://src/scenes/player/reticle.png" id="2_782su"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3urrb"]
+
+[node name="HUD" type="CanvasLayer" unique_id=437363362]
+script = ExtResource("1_jommb")
+
+[node name="Root" type="Control" parent="." unique_id=1429325410]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Root" unique_id=411865790]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 336.0
+offset_bottom = 470.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/Panel" unique_id=727297757]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="AffinityLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=897108276]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Afinidad: Agua"
+
+[node name="ScoreLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=1271729179]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Puntaje: 0"
+
+[node name="TimerLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=1793973462]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tiempo: 00:00"
+
+[node name="HealthLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=1069584354]
+layout_mode = 2
+text = "Vida"
+
+[node name="HealthBar" type="ProgressBar" parent="Root/Panel/VBoxContainer" unique_id=2090912731]
+unique_name_in_owner = true
+layout_mode = 2
+value = 100.0
+
+[node name="EnergyLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=765063821]
+layout_mode = 2
+text = "Energia"
+
+[node name="EnergyBar" type="ProgressBar" parent="Root/Panel/VBoxContainer" unique_id=1807379538]
+unique_name_in_owner = true
+layout_mode = 2
+value = 100.0
+
+[node name="CarriedWaterLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=1571606491]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Loot Agua: 0"
+
+[node name="CarriedEarthLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=1134143858]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Loot Tierra: 0"
+
+[node name="CarriedFireLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=1872749042]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Loot Fuego/Luz: 0"
+
+[node name="WaterLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=779636716]
+layout_mode = 2
+text = "Contenedor Agua"
+
+[node name="WaterBar" type="ProgressBar" parent="Root/Panel/VBoxContainer" unique_id=1915103703]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EarthLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=222711933]
+layout_mode = 2
+text = "Contenedor Tierra"
+
+[node name="EarthBar" type="ProgressBar" parent="Root/Panel/VBoxContainer" unique_id=910257587]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FireLabel" type="Label" parent="Root/Panel/VBoxContainer" unique_id=209741788]
+layout_mode = 2
+text = "Contenedor Fuego/Luz"
+
+[node name="FireBar" type="ProgressBar" parent="Root/Panel/VBoxContainer" unique_id=2108767761]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MessageLabel" type="Label" parent="Root" unique_id=2123071579]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -24.0
+offset_right = 150.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Nivel completado!"
+horizontal_alignment = 1
+
+[node name="Crosshair" type="Control" parent="." unique_id=2120261860]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Crosshair" unique_id=1799772360]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+mouse_filter = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Crosshair" unique_id=1741171599]
+scale = Vector2(25, 25)
+mesh = SubResource("QuadMesh_3urrb")
+texture = ExtResource("2_782su")
+
+[node name="CrosshairIconLabel" type="Label" parent="Crosshair" unique_id=1117304830]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.0
+offset_top = -29.0
+offset_right = 55.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,365 @@
+[gd_scene format=3 uid="uid://3gdfq15n2b14"]
+
+[ext_resource type="Script" uid="uid://dbf7ho7lrpjys" path="res://src/scripts/ui/MainMenu.gd" id="1_main_menu"]
+[ext_resource type="Texture2D" uid="uid://c5pcx80qp7x5o" path="res://src/scenes/ui/bg.png" id="2_kvnlr"]
+[ext_resource type="PackedScene" path="res://src/scenes/ui/OptionsMenu.tscn" id="2_options"]
+[ext_resource type="Texture2D" uid="uid://co4kwrv03eynx" path="res://src/scenes/ui/HowToPlay1.png" id="3_d0ptx"]
+[ext_resource type="Texture2D" uid="uid://doxbjakxkfrce" path="res://src/scenes/ui/HowToPlay2.png" id="4_tgqw8"]
+[ext_resource type="Texture2D" uid="uid://dfvhi2fwcdkl8" path="res://src/scenes/ui/HowToPlay3.png" id="5_e64nb"]
+[ext_resource type="Texture2D" uid="uid://dlgexb4wy6agy" path="res://src/scenes/ui/WaterContainer.png" id="6_y4pwa"]
+[ext_resource type="Texture2D" uid="uid://7fp2j13g8g3x" path="res://src/scenes/ui/FireContainer.png" id="7_kvnlr"]
+[ext_resource type="Texture2D" uid="uid://bdtit6o0uyfsv" path="res://src/scenes/ui/EarthContainer.png" id="8_chdid"]
+[ext_resource type="Texture2D" uid="uid://d2ycvfadfpihw" path="res://src/scenes/ui/ctrl.png" id="10_chdid"]
+[ext_resource type="Texture2D" uid="uid://dkcbbswi64cbf" path="res://src/scenes/ui/ctrlmando.png" id="11_k2ljq"]
+
+[node name="MainMenu" type="Control" unique_id=1477015266]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main_menu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=580981129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.055, 0.06, 1)
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=43740491]
+modulate = Color(1, 1, 1, 0.8862745)
+position = Vector2(639, 358)
+texture = ExtResource("2_kvnlr")
+
+[node name="Root" type="MarginContainer" parent="." unique_id=1887985097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 72
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root" unique_id=698627952]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="TitleBlock" type="VBoxContainer" parent="Root/HBoxContainer" unique_id=701347385]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/HBoxContainer/TitleBlock" unique_id=228867794]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 29
+theme_override_font_sizes/font_size = 64
+text = "Zen Drift"
+
+[node name="Subtitle" type="Label" parent="Root/HBoxContainer/TitleBlock" unique_id=1228820350]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 20
+text = "Prototipo tutorial"
+
+[node name="RightPanel" type="Control" parent="Root/HBoxContainer" unique_id=742984701]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainButtons" type="VBoxContainer" parent="Root/HBoxContainer/RightPanel" unique_id=77681406]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -108.0
+offset_right = 180.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="Button" parent="Root/HBoxContainer/RightPanel/MainButtons" unique_id=1173161987]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Jugar"
+
+[node name="OptionsButton" type="Button" parent="Root/HBoxContainer/RightPanel/MainButtons" unique_id=1220339856]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Opciones"
+
+[node name="ControlsButton" type="Button" parent="Root/HBoxContainer/RightPanel/MainButtons" unique_id=2061770349]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Controles"
+
+[node name="HowToPlayButton" type="Button" parent="Root/HBoxContainer/RightPanel/MainButtons" unique_id=1255942450]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Como jugar"
+
+[node name="ExitButton" type="Button" parent="Root/HBoxContainer/RightPanel/MainButtons" unique_id=1550729346]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Salir"
+
+[node name="OptionsWrapper" type="VBoxContainer" parent="Root/HBoxContainer/RightPanel" unique_id=123493385]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -144.0
+offset_right = 190.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="OptionsMenu" parent="Root/HBoxContainer/RightPanel/OptionsWrapper" unique_id=1513111872 instance=ExtResource("2_options")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="OptionsBackButton" type="Button" parent="Root/HBoxContainer/RightPanel/OptionsWrapper" unique_id=1365827711]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Volver"
+
+[node name="HowToPlayPanel" type="PanelContainer" parent="Root/HBoxContainer/RightPanel" unique_id=1101957621]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -264.0
+offset_right = 222.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel" unique_id=582526595]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer" unique_id=1733096364]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer" unique_id=833244592]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Como jugar"
+horizontal_alignment = 1
+
+[node name="Body" type="RichTextLabel" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer" unique_id=173757439]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="HowToPlay1" type="Sprite2D" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer/Body" unique_id=1203463262]
+position = Vector2(349.49994, 54.5)
+scale = Vector2(0.6001837, 0.5566503)
+texture = ExtResource("3_d0ptx")
+
+[node name="HowToPlay2" type="Sprite2D" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer/Body" unique_id=644423079]
+position = Vector2(345.99997, 181.50002)
+scale = Vector2(0.5885509, 0.51459855)
+texture = ExtResource("4_tgqw8")
+
+[node name="HowToPlay3" type="Sprite2D" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer/Body" unique_id=954266613]
+position = Vector2(356.00003, 366.5)
+scale = Vector2(0.5228915, 0.59405935)
+texture = ExtResource("5_e64nb")
+
+[node name="WaterContainer" type="Sprite2D" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer/Body" unique_id=1850531462]
+position = Vector2(131, 294.49997)
+scale = Vector2(0.16715969, 0.122548975)
+texture = ExtResource("6_y4pwa")
+
+[node name="FireContainer" type="Sprite2D" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer/Body" unique_id=1702810421]
+position = Vector2(568, 295.5)
+scale = Vector2(0.16753457, 0.12620184)
+texture = ExtResource("7_kvnlr")
+
+[node name="EarthContainer" type="Sprite2D" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer/Body" unique_id=1346700423]
+position = Vector2(343.99997, 291.49997)
+scale = Vector2(0.18611114, 0.13195549)
+texture = ExtResource("8_chdid")
+
+[node name="HowToPlayBackButton" type="Button" parent="Root/HBoxContainer/RightPanel/HowToPlayPanel/MarginContainer/VBoxContainer" unique_id=1371308353]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Volver"
+
+[node name="ControlsPanel" type="PanelContainer" parent="Root/HBoxContainer/RightPanel" unique_id=808766511]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -264.0
+offset_right = 222.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/HBoxContainer/RightPanel/ControlsPanel" unique_id=2133485328]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/HBoxContainer/RightPanel/ControlsPanel/MarginContainer" unique_id=1457573525]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Root/HBoxContainer/RightPanel/ControlsPanel/MarginContainer/VBoxContainer" unique_id=2081699494]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Controles"
+horizontal_alignment = 1
+
+[node name="Body" type="RichTextLabel" parent="Root/HBoxContainer/RightPanel/ControlsPanel/MarginContainer/VBoxContainer" unique_id=679519767]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="Ctrl" type="Sprite2D" parent="Root/HBoxContainer/RightPanel/ControlsPanel/MarginContainer/VBoxContainer/Body" unique_id=646847162]
+position = Vector2(342.00006, 186.99998)
+scale = Vector2(0.5128205, 0.5458715)
+texture = ExtResource("10_chdid")
+
+[node name="JoypadButton" type="Button" parent="Root/HBoxContainer/RightPanel/ControlsPanel/MarginContainer/VBoxContainer" unique_id=745383977]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Controles de mando"
+
+[node name="ControlsBackButton" type="Button" parent="Root/HBoxContainer/RightPanel/ControlsPanel/MarginContainer/VBoxContainer" unique_id=1470258569]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Volver"
+
+[node name="JoypadPanel" type="PanelContainer" parent="Root/HBoxContainer/RightPanel" unique_id=795012167]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -292.0
+offset_top = -12.0
+offset_right = 432.0
+offset_bottom = 528.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/HBoxContainer/RightPanel/JoypadPanel" unique_id=639380695]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/HBoxContainer/RightPanel/JoypadPanel/MarginContainer" unique_id=846409415]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Body" type="RichTextLabel" parent="Root/HBoxContainer/RightPanel/JoypadPanel/MarginContainer/VBoxContainer" unique_id=2018593375]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="Ctrlmando" type="Sprite2D" parent="Root/HBoxContainer/RightPanel/JoypadPanel/MarginContainer/VBoxContainer/Body" unique_id=1282635121]
+position = Vector2(338.00006, 209)
+scale = Vector2(1.3350987, 1.1924715)
+texture = ExtResource("11_k2ljq")
+
+[node name="JoypadBackButton" type="Button" parent="Root/HBoxContainer/RightPanel/JoypadPanel/MarginContainer/VBoxContainer" unique_id=233535073]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Volver"

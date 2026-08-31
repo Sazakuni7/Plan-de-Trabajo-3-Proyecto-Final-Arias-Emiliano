@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dpay0w4ur2gq8"]
+
+[ext_resource type="Script" uid="uid://ch3l4uxvutt1f" path="res://src/scripts/player/Player.gd" id="1_fhro6"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://src/scenes/player/sophia_skin/sophia_skin.tscn" id="2_sdprq"]
+[ext_resource type="PackedScene" uid="uid://cadytwaqp8lpw" path="res://src/scenes/player/projectile/projectile.tscn" id="2_xqlsy"]
+[ext_resource type="PackedScene" uid="uid://dd73y25a5fujm" path="res://src/scenes/vfx/StatusEffectAttachment.tscn" id="4_xxciv"]
+[ext_resource type="Resource" uid="uid://cmg5ur6qdwdg7" path="res://src/resources/player_attacks/water_primary.tres" id="5_water_primary"]
+[ext_resource type="Resource" uid="uid://4ckiudv0up74" path="res://src/resources/player_attacks/water_secondary.tres" id="6_water_secondary"]
+[ext_resource type="Resource" uid="uid://wcypxkau5hv8" path="res://src/resources/player_attacks/water_ultimate.tres" id="7_water_ultimate"]
+[ext_resource type="Resource" uid="uid://ewnhwc0hid2a" path="res://src/resources/player_attacks/earth_primary.tres" id="8_earth_primary"]
+[ext_resource type="Resource" uid="uid://c2kmglpt1367s" path="res://src/resources/player_attacks/earth_secondary.tres" id="9_earth_secondary"]
+[ext_resource type="Resource" uid="uid://c0inb8chdwguu" path="res://src/resources/player_attacks/earth_ultimate.tres" id="10_earth_ultimate"]
+[ext_resource type="Resource" uid="uid://jh1pj2rjyxqa" path="res://src/resources/player_attacks/fire_primary.tres" id="11_fire_primary"]
+[ext_resource type="Resource" uid="uid://k0fgabfpgiry" path="res://src/resources/player_attacks/fire_secondary.tres" id="12_fire_secondary"]
+[ext_resource type="Resource" uid="uid://cvfcg47svd3lc" path="res://src/resources/player_attacks/fire_ultimate.tres" id="13_fire_ultimate"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6dd40"]
+radius = 0.23242188
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_j2g43"]
+radius = 0.45
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2i5iq"]
+albedo_color = Color(0.18, 0.55, 1, 1)
+
+[node name="Player" type="CharacterBody3D" unique_id=1121756358]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("1_fhro6")
+projectile_scene = ExtResource("2_xqlsy")
+water_primary_attack = ExtResource("5_water_primary")
+water_secondary_attack = ExtResource("6_water_secondary")
+water_ultimate_attack = ExtResource("7_water_ultimate")
+earth_primary_attack = ExtResource("8_earth_primary")
+earth_secondary_attack = ExtResource("9_earth_secondary")
+earth_ultimate_attack = ExtResource("10_earth_ultimate")
+fire_primary_attack = ExtResource("11_fire_primary")
+fire_secondary_attack = ExtResource("12_fire_secondary")
+fire_ultimate_attack = ExtResource("13_fire_ultimate")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=903147507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_6dd40")
+
+[node name="Visual" type="MeshInstance3D" parent="." unique_id=1032862189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_j2g43")
+surface_material_override/0 = SubResource("StandardMaterial3D_2i5iq")
+
+[node name="SophiaSkin" parent="." unique_id=71180830 instance=ExtResource("2_sdprq")]
+unique_name_in_owner = true
+transform = Transform3D(-0.99858165, 0, 0.053242296, 0, 1, 0, -0.053242296, 0, -0.99858165, 0, 0, 0)
+
+[node name="StatusEffectAttachment" parent="." unique_id=1832498891 instance=ExtResource("4_xxciv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2013142, 0)
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1104985917]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.96432215, 0.26473153, 0, -0.26473153, 0.96432215, 0, 1.8656654, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=188783449]
+transform = Transform3D(1, 0, 0, 0, 0.93479455, 0.35518855, 0, -0.35518855, 0.93479455, 0, 0.91268325, 0.25055543)
+spring_length = 7.96
+margin = 0.25
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1031572565]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
+current = true
+fov = 70.0
+
+[node name="Muzzle" type="Marker3D" parent="CameraPivot/SpringArm3D/Camera3D" unique_id=1377353966]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8239473, -7.1846037)

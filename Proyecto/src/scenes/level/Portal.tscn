@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b6s2vv55x8ery"]
+
+[ext_resource type="Script" uid="uid://dagxn8gdwbfp" path="res://src/scripts/world/Portal.gd" id="1_y1mw6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e0qeu"]
+height = 2.5
+radius = 1.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o5uie"]
+top_radius = 1.35
+bottom_radius = 1.35
+height = 0.28
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fpoe"]
+albedo_color = Color(0.22, 0.22, 0.22, 1)
+
+[node name="Portal" type="Area3D" unique_id=428815774]
+transform = Transform3D(1.6789298, 0, 0, 0, 1.5, 0, 0, 0, 1.7518535, 0, 0, 0)
+script = ExtResource("1_y1mw6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=797423095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CylinderShape3D_e0qeu")
+
+[node name="Visual" type="MeshInstance3D" parent="." unique_id=1753394746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+mesh = SubResource("CylinderMesh_o5uie")
+surface_material_override/0 = SubResource("StandardMaterial3D_3fpoe")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1046265578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+billboard = 1
+text = "Portal inactivo"
+font_size = 48

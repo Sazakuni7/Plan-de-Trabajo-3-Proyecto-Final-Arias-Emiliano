@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dx4doxla8ye2n"]
+
+[ext_resource type="PackedScene" uid="uid://dd73y25a5fujm" path="res://src/scenes/vfx/StatusEffectAttachment.tscn" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://bhtn5do2250sf" path="res://src/effects/status/vfx_status_shatter_enemy_fire.tscn" id="2_7mc3l"]
+
+[node name="EnemyStatusEffect" unique_id=1837340698 instance=ExtResource("1_base")]
+transform = Transform3D(0.75, 0, 0, 0, 1, 0, 0, 0, 0.75, 0, 0, 0)
+emission = 4.0
+
+[node name="VFXStatusShatter" parent="." index="0" unique_id=1512703633]
+visible = false
+secondary_color = Color(0.8, 0.8, 0.8, 1)
+tertiary_color = Color(0.5, 0.5, 0.5, 1)
+emission = 4.0
+
+[node name="VFXStatusShatterEnemy" parent="." index="1" unique_id=1142072859 instance=ExtResource("2_7mc3l")]

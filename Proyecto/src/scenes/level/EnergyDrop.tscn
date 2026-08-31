@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bh1efgwiuwk4n"]
+
+[ext_resource type="Script" uid="uid://m68qf2lqu5e2" path="res://src/scripts/world/EnergyDrop.gd" id="1_jmtkw"]
+[ext_resource type="PackedScene" uid="uid://byt3hffgjsga2" path="res://src/scenes/vfx/EnergyDropStatusEffect.tscn" id="2_wgopu"]
+[ext_resource type="Script" path="res://src/scripts/vfx/vfx_light.gd" id="3_kvgjk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xd65j"]
+radius = 0.001
+
+[sub_resource type="BoxMesh" id="BoxMesh_u14ft"]
+size = Vector3(0.65, 0.65, 0.65)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gf2i4"]
+albedo_color = Color(0.18, 0.55, 1, 1)
+emission_enabled = true
+emission = Color(0.18, 0.55, 1, 1)
+
+[node name="EnergyDrop" type="Area3D" unique_id=1812607611]
+script = ExtResource("1_jmtkw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=390199781]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("SphereShape3D_xd65j")
+
+[node name="Visual" type="MeshInstance3D" parent="." unique_id=875972674]
+mesh = SubResource("BoxMesh_u14ft")
+surface_material_override/0 = SubResource("StandardMaterial3D_gf2i4")
+
+[node name="EnergyDropStatusEffect" parent="." unique_id=1771203999 instance=ExtResource("2_wgopu")]
+emitting = false
+
+[node name="VFX_Light" type="OmniLight3D" parent="." unique_id=1037252837]
+omni_range = 0.88853085
+script = ExtResource("3_kvgjk")
+metadata/_custom_type_script = "uid://bdk8hhttligw"

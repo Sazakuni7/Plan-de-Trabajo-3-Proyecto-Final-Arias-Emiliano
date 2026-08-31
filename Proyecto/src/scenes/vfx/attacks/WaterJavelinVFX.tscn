@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://48nlk53adeu4"]
+
+[ext_resource type="PackedScene" uid="uid://bbrua2kwcecpu" path="res://src/VFXPacks/assets/BinbunVFX/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_02.tscn" id="1_vfx"]
+
+[node name="WaterJavelinVFX" unique_id=1839182472 instance=ExtResource("1_vfx")]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 0, 0)
+
+[node name="Light" parent="." index="3" unique_id=836561536]
+light_color = Color(0.24000001, 0.3793332, 1, 1)

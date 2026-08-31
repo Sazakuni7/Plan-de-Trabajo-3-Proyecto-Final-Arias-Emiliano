@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cadytwaqp8lpw"]
+
+[ext_resource type="Script" uid="uid://ddl7exdqyfbkl" path="res://src/scripts/world/Projectile.gd" id="1_5b41t"]
+[ext_resource type="PackedScene" uid="uid://c2533xch8kmjl" path="res://src/scenes/player/projectile/projectile_3d.tscn" id="2_eq2e7"]
+[ext_resource type="PackedScene" uid="uid://b6l5itg1fsj6a" path="res://src/scenes/vfx/ElementalProjectileVFX.tscn" id="3_projectile_vfx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4uils"]
+
+[node name="Projectile" type="Area3D" unique_id=1347700429]
+script = ExtResource("1_5b41t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=577482727]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_4uils")
+
+[node name="ElementalProjectileVFX" parent="." unique_id=1537624418 instance=ExtResource("3_projectile_vfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.20135671)
+palette = 3
+emission = 0.955
+
+[node name="Projectile3D" parent="." unique_id=909967112 instance=ExtResource("2_eq2e7")]
+visible = false

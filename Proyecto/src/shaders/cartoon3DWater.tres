@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dogxu56h81umo"]
+
+[ext_resource type="Shader" uid="uid://dom2d7dc3rcev" path="res://src/shaders/cartoon3DWater.gdshader" id="1_dypjg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dypjg")
+shader_parameter/wave_amplitude = 0.03
+shader_parameter/wave_frequency = 6.0
+shader_parameter/wave_speed = 1.5
+shader_parameter/seamless = true
+shader_parameter/_speed = 1.0
+shader_parameter/_scale = 3.0
+shader_parameter/color_deep = Color(0.05, 0.25, 0.55, 0.85)
+shader_parameter/color_shallow = Color(0.4, 0.85, 0.95, 0.6)
+shader_parameter/color_threshold = 0.5
+shader_parameter/outline_enabled = true
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_thickness = 0.04

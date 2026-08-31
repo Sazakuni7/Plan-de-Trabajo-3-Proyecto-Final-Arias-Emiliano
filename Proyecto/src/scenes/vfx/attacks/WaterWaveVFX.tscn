@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://drmyyedij4eqw"]
+
+[ext_resource type="PackedScene" uid="uid://ccq0fkq8mphiq" path="res://src/VFXPacks/assets/BinbunVFX/magic_projectiles/effects/mprojectile_wave/mprojectile_wave_vfx_02.tscn" id="1_vfx"]
+
+[node name="WaterWaveVFX" unique_id=490671381 instance=ExtResource("1_vfx")]
+
+[node name="Light" parent="." index="4" unique_id=1308840402]
+light_color = Color(0.24000001, 0.3160001, 1, 1)

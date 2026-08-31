@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bof6x1cgfncuw"]
+
+[ext_resource type="PackedScene" uid="uid://q8efih80ittq" path="res://src/VFXPacks/assets/BinbunVFX/magic_projectiles/effects/mprojectile_basic/mprojectile_basic_vfx_04.tscn" id="1_vfx"]
+
+[node name="FireBasicVFX" unique_id=1984644447 instance=ExtResource("1_vfx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+secondary_color = Color(2.2011487, 0.88599735, 0, 1)
+tertiary_color = Color(3.236122, 0.31070372, 0, 1)
+light_color = Color(1, 0.38333333, 0, 1)
+
+[node name="Light" parent="." index="3"]
+light_color = Color(1, 0.38333333, 0, 1)

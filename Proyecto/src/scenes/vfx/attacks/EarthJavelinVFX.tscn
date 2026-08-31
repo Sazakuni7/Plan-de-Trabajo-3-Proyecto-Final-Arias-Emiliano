@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c2qvgv4bccy1c"]
+
+[ext_resource type="PackedScene" uid="uid://l3mk56ty44tw" path="res://src/VFXPacks/assets/BinbunVFX/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_01.tscn" id="1_vfx"]
+
+[node name="EarthJavelinVFX" unique_id=1708526411 instance=ExtResource("1_vfx")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Light" parent="." index="3" unique_id=50782384]
+light_color = Color(0.7764706, 0.90588236, 0, 1)

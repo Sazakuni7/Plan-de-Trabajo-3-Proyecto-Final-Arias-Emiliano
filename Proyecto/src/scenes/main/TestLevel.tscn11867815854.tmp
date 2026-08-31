@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b86vjbj5cw1gk"]
+
+[ext_resource type="Script" uid="uid://bypau5cw53885" path="res://src/scripts/main/TestLevel.gd" id="1_3l1ts"]
+[ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://src/scenes/level/level.tscn" id="2_5nqsp"]
+[ext_resource type="PackedScene" uid="uid://dpay0w4ur2gq8" path="res://src/scenes/player/Player.tscn" id="2_8e1tq"]
+[ext_resource type="PackedScene" uid="uid://b6s2vv55x8ery" path="res://src/scenes/level/Portal.tscn" id="4_5nqsp"]
+[ext_resource type="PackedScene" path="res://src/scenes/world/Container.tscn" id="4_t8wbc"]
+[ext_resource type="PackedScene" uid="uid://bf6bbj6ibj60i" path="res://src/scenes/enemies/EnemyBase.tscn" id="5_mtpqd"]
+[ext_resource type="PackedScene" uid="uid://dooknyrp81wl7" path="res://src/scenes/ui/HUD.tscn" id="6_0qxm0"]
+
+[node name="TestLevel" type="Node3D" unique_id=1940748599]
+script = ExtResource("1_3l1ts")
+
+[node name="Level" parent="." unique_id=757561452 instance=ExtResource("2_5nqsp")]
+
+[node name="Player" parent="." unique_id=1777645782 instance=ExtResource("2_8e1tq")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.2973423, 0.18038416, -36.649033)
+
+[node name="Portal" parent="." unique_id=1554757206 instance=ExtResource("4_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0878105, 3.971179, -22.51941)
+
+[node name="Containers" type="Node3D" parent="." unique_id=557311106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13894081, -41.91359)
+
+[node name="WaterContainer" parent="Containers" unique_id=1873313247 instance=ExtResource("4_t8wbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 4)
+
+[node name="EarthContainer" parent="Containers" unique_id=1775028556 instance=ExtResource("4_t8wbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+affinity = 1
+
+[node name="FireContainer" parent="Containers" unique_id=423205955 instance=ExtResource("4_t8wbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4)
+affinity = 2
+
+[node name="InitialEnemies" type="Node3D" parent="." unique_id=1428938112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.173584)
+
+[node name="WaterEnemy" parent="InitialEnemies" unique_id=578166119 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 1.1669922)
+
+[node name="EarthEnemy" parent="InitialEnemies" unique_id=7995821 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.1298027)
+affinity = 1
+
+[node name="FireEnemy" parent="InitialEnemies" unique_id=113876268 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.666789, 1, 4.1706924)
+affinity = 2
+
+[node name="EnemySpawnPoints" type="Node3D" parent="." unique_id=1184074068]
+transform = Transform3D(1.0742942, 0, 0, 0, 1, 0, 0, 0, 0.67578036, 2.506589, 0, -33.904484)
+
+[node name="SpawnNorthWest" type="Marker3D" parent="EnemySpawnPoints" unique_id=233422610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, -10)
+
+[node name="SpawnNorthEast" type="Marker3D" parent="EnemySpawnPoints" unique_id=1458805113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, -9)
+
+[node name="SpawnSouthWest" type="Marker3D" parent="EnemySpawnPoints" unique_id=1054973793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, 12)
+
+[node name="SpawnSouthEast" type="Marker3D" parent="EnemySpawnPoints" unique_id=1853695803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 11)
+
+[node name="EnemySpawnTimer" type="Timer" parent="." unique_id=1213935042]
+
+[node name="HUD" parent="." unique_id=1217219530 instance=ExtResource("6_0qxm0")]

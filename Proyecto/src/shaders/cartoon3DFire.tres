@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dnjxmb725uthu"]
+
+[ext_resource type="Shader" uid="uid://cwuehnyabum1u" path="res://src/shaders/cartoon3DFire.gdshader" id="1_ie6tl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ie6tl")
+shader_parameter/apply_shape_deform = false
+shader_parameter/top_radius = 0.0
+shader_parameter/bottom_radius = 0.0
+shader_parameter/center_radius = 0.0
+shader_parameter/center_position = 0.0
+shader_parameter/cylinder_height = 1.0
+shader_parameter/bottom_curve = 0.4
+shader_parameter/_vibrate_amplitude = 0.015
+shader_parameter/_vibrate_frequency = 200.0
+shader_parameter/_speed = 2.0
+shader_parameter/_scale = 2.0
+shader_parameter/color_inner = Color(1.353, 0.919, 0.416, 0)
+shader_parameter/color_outer = Color(0.737, 0.141, 0, 0.678)
+shader_parameter/color_threshold = 0.7490000355775
+shader_parameter/flame_height = 1.28
+shader_parameter/flame_height_offset = -0.755
+shader_parameter/pattern_scale = 1.76
+shader_parameter/use_additional_texture = true
+shader_parameter/texture_scale = 1.0
+shader_parameter/texture_blend = 1.0
+shader_parameter/outline_enabled = true
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_thickness = 0.0400000019

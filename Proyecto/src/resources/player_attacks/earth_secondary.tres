@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PlayerAttackConfig" format=3 uid="uid://c2kmglpt1367s"]
+
+[ext_resource type="Script" uid="uid://f5yqckcuyagq" path="res://src/scripts/player/PlayerAttackConfig.gd" id="1_attack_config"]
+[ext_resource type="PackedScene" uid="uid://ju0mqu8aalgb" path="res://src/scenes/vfx/attacks/EarthWaveVFX.tscn" id="2_vfx"]
+
+[resource]
+script = ExtResource("1_attack_config")
+cast_sound = 1
+damage = 20.0
+knockback_force = 12.0
+cooldown = 1.2
+vfx_scene = ExtResource("2_vfx")
+vfx_scale = Vector3(1.75, 1.75, 1.75)
+vfx_rotation_degrees = Vector3(0, 90, 0)
+vfx_light_energy_multiplier = 2.0
+vfx_light_range = 11.0
+projectile_speed = 10.0

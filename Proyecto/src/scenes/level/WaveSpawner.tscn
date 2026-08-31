@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bs0ba152mev2c"]
+
+[ext_resource type="Script" uid="uid://ctimedwk104xb" path="res://src/scripts/world/WaveSpawner.gd" id="1_mg7us"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i8gqx"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hxnm3"]
+size = Vector3(1.4, 1.4, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfojb"]
+albedo_color = Color(0.7, 0.7, 1, 1)
+emission_enabled = true
+emission = Color(0.15, 0.15, 0.5, 1)
+
+[node name="WaveSpawner" type="Area3D" unique_id=1684227726]
+script = ExtResource("1_mg7us")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1925280092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_i8gqx")
+
+[node name="Visual" type="MeshInstance3D" parent="." unique_id=1086291582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_hxnm3")
+surface_material_override/0 = SubResource("StandardMaterial3D_cfojb")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=999763147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+billboard = 1
+text = "Interactuar: oleada 1/3"
+font_size = 40
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=435646713]
+
+[node name="Spawn1" type="Marker3D" parent="SpawnPoints" unique_id=1080916227]
+transform = Transform3D(1.6485392, 0, 0, 0, 1, 0, 0, 0, 1.4793174, 8.639631, 0.5, -17.457008)
+
+[node name="Spawn2" type="Marker3D" parent="SpawnPoints" unique_id=1930829894]
+transform = Transform3D(1.6485392, 0, 0, 0, 1, 0, 0, 0, 1.4793174, -19.64775, 0.5, -12.431789)
+
+[node name="Spawn3" type="Marker3D" parent="SpawnPoints" unique_id=1023303951]
+transform = Transform3D(1.6485392, 0, 0, 0, 1, 0, 0, 0, 1.4793174, -17.497284, 2, 4.150812)
+
+[node name="Spawn5" type="Marker3D" parent="SpawnPoints" unique_id=1633227763]
+transform = Transform3D(1.6485392, 0, 0, 0, 1, 0, 0, 0, 1.4793174, 19.021015, 1.5, 3.5003347)
+
+[node name="Spawn6" type="Marker3D" parent="SpawnPoints" unique_id=652285096]
+transform = Transform3D(1.6485392, 0, 0, 0, 1, 0, 0, 0, 1.4793174, -8.655329, 0.5, -18.150848)
+
+[node name="Spawn4" type="Marker3D" parent="SpawnPoints" unique_id=1335170796]
+transform = Transform3D(1.6485392, 0, 0, 0, 1, 0, 0, 0, 1.4793174, 18.326412, 1, -10.471107)

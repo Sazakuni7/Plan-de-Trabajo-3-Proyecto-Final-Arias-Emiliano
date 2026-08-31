@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cm6xvcmuqhpa"]
+
+[ext_resource type="PackedScene" uid="uid://bjpdybxj6pn7q" path="res://src/VFXPacks/assets/BinbunVFX/magic_projectiles/effects/mprojectile_basic/mprojectile_basic_vfx_01.tscn" id="1_vfx"]
+
+[node name="EarthOrbitRockVFX" unique_id=120842225 instance=ExtResource("1_vfx")]
+primary_color = Color(0.4, 0.23333335, 0, 1)
+secondary_color = Color(0.8848981, 0.66217345, 0, 1)
+tertiary_color = Color(0.4239999, 1, 0.27999997, 1)
+light_color = Color(0.8509804, 1, 0, 1)
+light_energy = 3.0
+
+[node name="Trail" parent="." index="1" unique_id=1188427840]
+transform = Transform3D(-4.37114e-08, 0.35436377, 0, -1, -1.5489736e-08, 0, 0, 0, 1, -0.7208924, 0, 0)
+
+[node name="Light" parent="." index="3" unique_id=481853376]
+light_color = Color(0.8509804, 1, 0, 1)
+light_energy = 3.0
+base_energy = 3.0

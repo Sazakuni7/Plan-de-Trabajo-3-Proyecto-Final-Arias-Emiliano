@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dn3rndc8g1fy5"]
+
+[ext_resource type="PackedScene" uid="uid://bf6bbj6ibj60i" path="res://src/scenes/enemies/EnemyBase.tscn" id="1_vp5bn"]
+[ext_resource type="Material" uid="uid://dnjxmb725uthu" path="res://src/shaders/cartoon3DFire.tres" id="2_rs32s"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rs32s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd8fd"]
+albedo_color = Color(2.4061394, 1.1619616, 0, 1)
+
+[node name="EnemyFire" unique_id=1567249271 instance=ExtResource("1_vp5bn")]
+affinity = 2
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78, 0)
+
+[node name="Visual" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78, 0)
+surface_material_override/0 = ExtResource("2_rs32s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual" index="0" unique_id=1145138006]
+transform = Transform3D(0.8264736, 0, 0, 0, 0.7149667, 0, 0, 0, 0.8373565, 0, -0.012918711, 0)
+mesh = SubResource("CapsuleMesh_rs32s")
+surface_material_override/0 = SubResource("StandardMaterial3D_nd8fd")
+
+[node name="EnergyDropSpawn" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+
+[node name="ProjectileMuzzle" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, -0.62)

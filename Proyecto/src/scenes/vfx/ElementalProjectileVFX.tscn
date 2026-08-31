@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b6l5itg1fsj6a"]
+
+[ext_resource type="Script" uid="uid://c0jg30yb6i4h1" path="res://src/scripts/vfx/ElementalProjectileVFX.gd" id="1_projectile_vfx"]
+[ext_resource type="PackedScene" uid="uid://c4jq7s82wru52" path="res://src/effects/projectile/vfx_fire_projectile_01.tscn" id="2_fire_projectile"]
+[ext_resource type="Script" path="res://src/scripts/vfx/vfx_light.gd" id="3_ee4pj"]
+
+[node name="ElementalProjectileVFX" type="Node3D" unique_id=2073127768]
+script = ExtResource("1_projectile_vfx")
+
+[node name="VFXFireProjectile_01" parent="." unique_id=1102679043 instance=ExtResource("2_fire_projectile")]
+transform = Transform3D(-5.9010375e-08, 0, 1.35, 0, 1.35, 0, -1.35, 0, -5.9010375e-08, 0, 0, 0)
+primary_color = Color(1, 0.71, 0.3, 1)
+secondary_color = Color(1, 0.4, 0.1, 1)
+tertiary_color = Color(0.51, 0.08, 0.04, 1)
+light_color = Color(1, 0.71, 0.3, 1)
+
+[node name="VFX_Light" type="OmniLight3D" parent="." unique_id=1181885209]
+light_color = Color(1, 0.47733337, 0.01999998, 1)
+script = ExtResource("3_ee4pj")
+metadata/_custom_type_script = "uid://bdk8hhttligw"

@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf6bbj6ibj60i"]
+
+[ext_resource type="Script" uid="uid://caokblw31drjr" path="res://src/scripts/enemies/Enemy.gd" id="1_it8np"]
+[ext_resource type="PackedScene" uid="uid://bh1efgwiuwk4n" path="res://src/scenes/level/EnergyDrop.tscn" id="2_65s4w"]
+[ext_resource type="PackedScene" uid="uid://cadytwaqp8lpw" path="res://src/scenes/player/projectile/projectile.tscn" id="3_projectile"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvdlx"]
+radius = 0.42
+height = 1.55
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_l1h8d"]
+radius = 0.42
+height = 1.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3hvd"]
+albedo_color = Color(0.18, 0.55, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_drop_preview"]
+size = Vector3(0.45, 0.45, 0.45)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_drop_preview"]
+albedo_color = Color(0.18, 0.55, 1, 1)
+emission_enabled = true
+emission = Color(0.18, 0.55, 1, 1)
+
+[node name="EnemyBase" type="CharacterBody3D"]
+script = ExtResource("1_it8np")
+energy_drop_scene = ExtResource("2_65s4w")
+projectile_scene = ExtResource("3_projectile")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.78, 0)
+shape = SubResource("CapsuleShape3D_hvdlx")
+
+[node name="Visual" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.78, 0)
+mesh = SubResource("CapsuleMesh_l1h8d")
+surface_material_override/0 = SubResource("StandardMaterial3D_r3hvd")
+
+[node name="DamageFlashLight" type="OmniLight3D" parent="."]
+visible = false
+position = Vector3(0, 0.9, 0)
+light_energy = 0.0
+omni_range = 3.0
+
+[node name="EnergyDropSpawn" type="Marker3D" parent="."]
+position = Vector3(0, 0.65, 0)
+
+[node name="EnergyDropPreview" type="MeshInstance3D" parent="EnergyDropSpawn"]
+mesh = SubResource("BoxMesh_drop_preview")
+surface_material_override/0 = SubResource("StandardMaterial3D_drop_preview")
+
+[node name="ProjectileMuzzle" type="Marker3D" parent="."]
+position = Vector3(0, 1.15, -0.62)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://src/scenes/vfx/StatusEffectAttachment.tscn" id="1_base"]
+
+[node name="PlayerStatusEffect" instance=ExtResource("1_base")]
+scale = Vector3(0.9, 1.25, 0.9)
+palette = 3
+emission = 5.0

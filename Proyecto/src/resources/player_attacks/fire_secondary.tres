@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerAttackConfig" format=3 uid="uid://k0fgabfpgiry"]
+
+[ext_resource type="Script" uid="uid://f5yqckcuyagq" path="res://src/scripts/player/PlayerAttackConfig.gd" id="1_attack_config"]
+[ext_resource type="PackedScene" uid="uid://bof6x1cgfncuw" path="res://src/scenes/vfx/attacks/FireBasicVFX.tscn" id="2_vfx"]
+
+[resource]
+script = ExtResource("1_attack_config")
+attack_mode = 1
+cast_sound = 1
+damage = 20.0
+cooldown = 1.2
+vfx_scene = ExtResource("2_vfx")
+vfx_scale = Vector3(1.2, 1.2, 1.2)
+vfx_rotation_degrees = Vector3(0, 90, 0)
+vfx_light_energy_multiplier = 2.0
+vfx_light_range = 10.0
+projectile_speed = 10.0
+projectile_count = 3
+spread_arc_degrees = 34.0

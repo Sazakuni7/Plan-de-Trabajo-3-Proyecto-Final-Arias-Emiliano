@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://b86vjbj5cw1gk"]
+
+[ext_resource type="Script" uid="uid://bypau5cw53885" path="res://src/scripts/main/TestLevel.gd" id="1_3l1ts"]
+[ext_resource type="PackedScene" uid="uid://cnedxfn2pxh2t" path="res://src/scenes/level/level.tscn" id="2_5nqsp"]
+[ext_resource type="PackedScene" uid="uid://dpay0w4ur2gq8" path="res://src/scenes/player/Player.tscn" id="2_8e1tq"]
+[ext_resource type="PackedScene" uid="uid://b6s2vv55x8ery" path="res://src/scenes/level/Portal.tscn" id="4_5nqsp"]
+[ext_resource type="PackedScene" uid="uid://cwag45bi7fcqc" path="res://src/scenes/level/Container.tscn" id="5_5nqsp"]
+[ext_resource type="PackedScene" uid="uid://bf6bbj6ibj60i" path="res://src/scenes/enemies/EnemyBase.tscn" id="5_mtpqd"]
+[ext_resource type="PackedScene" uid="uid://dooknyrp81wl7" path="res://src/scenes/ui/HUD.tscn" id="6_0qxm0"]
+[ext_resource type="PackedScene" uid="uid://bs0ba152mev2c" path="res://src/scenes/level/WaveSpawner.tscn" id="7_t6fmc"]
+
+[node name="TestLevel" type="Node3D" unique_id=1940748599]
+script = ExtResource("1_3l1ts")
+enable_runtime_spawns = false
+
+[node name="Level" parent="." unique_id=757561452 instance=ExtResource("2_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064035416, 0.048817635, -0.013755798)
+
+[node name="Player" parent="." unique_id=1777645782 instance=ExtResource("2_8e1tq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.50173, 0.87073636, 20.653378)
+
+[node name="Portal" parent="." unique_id=1554757206 instance=ExtResource("4_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.204285, 5.0655007, -22.51941)
+
+[node name="Containers" type="Node3D" parent="." unique_id=557311106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13894081, -41.91359)
+
+[node name="TrueWaterContainer" parent="Containers" unique_id=1864796772 instance=ExtResource("5_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.15573, 4.899248, 17.165173)
+
+[node name="TrueEarthContainer" parent="Containers" unique_id=1107773104 instance=ExtResource("5_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.80188, 4.898615, 29.403069)
+affinity = 1
+
+[node name="TrueFireContainer" parent="Containers" unique_id=314439636 instance=ExtResource("5_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.897644, 4.9379005, 24.3068)
+affinity = 2
+
+[node name="WaterContainer" parent="Containers" unique_id=1428805949 instance=ExtResource("5_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0994911, 0.48028076, 2.020729)
+counts_for_portal = false
+
+[node name="EarthContainer" parent="Containers" unique_id=795232558 instance=ExtResource("5_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7456522, 0.47380364, 14.258625)
+affinity = 1
+counts_for_portal = false
+
+[node name="FireContainer" parent="Containers" unique_id=179097926 instance=ExtResource("5_5nqsp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.158581, 0.4892676, 9.162357)
+affinity = 2
+counts_for_portal = false
+
+[node name="InitialEnemies (Stationary)" type="Node3D" parent="." unique_id=1428938112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.173584)
+
+[node name="WaterEnemy4" parent="InitialEnemies (Stationary)" unique_id=296038836 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.12194, 3.2579238, 63.448936)
+behavior_mode = 0
+
+[node name="FireEnemy5" parent="InitialEnemies (Stationary)" unique_id=1787456734 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.27636, 3.3863678, 64.49892)
+affinity = 2
+behavior_mode = 0
+
+[node name="EarthEnemy3" parent="InitialEnemies (Stationary)" unique_id=1786825210 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.09044, 3.5418606, 62.750805)
+affinity = 1
+behavior_mode = 0
+
+[node name="FireEnemy4" parent="InitialEnemies (Stationary)" unique_id=724515132 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.225235, 3.6068668, 63.3143)
+affinity = 2
+behavior_mode = 0
+
+[node name="FireEnemy2" parent="InitialEnemies (Stationary)" unique_id=1505496467 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.95177, 3.4576755, 63.8778)
+affinity = 2
+behavior_mode = 0
+
+[node name="EarthEnemy2" parent="InitialEnemies (Stationary)" unique_id=662977145 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.724724, 3.9860563, 35.159184)
+affinity = 1
+behavior_mode = 0
+
+[node name="WaterEnemy3" parent="InitialEnemies (Stationary)" unique_id=679388930 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.85952, 4.0510626, 35.72268)
+behavior_mode = 0
+
+[node name="WaterEnemy2" parent="InitialEnemies (Stationary)" unique_id=1621232907 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.58606, 3.9018712, 36.28618)
+behavior_mode = 0
+
+[node name="WaterEnemy" parent="InitialEnemies (Stationary)" unique_id=578166119 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.432526, 0.70167804, 58.35499)
+behavior_mode = 0
+
+[node name="EarthEnemy" parent="InitialEnemies (Stationary)" unique_id=7995821 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.75052, 0.62578464, 58.483105)
+affinity = 1
+behavior_mode = 0
+
+[node name="FireEnemy3" parent="InitialEnemies (Stationary)" unique_id=1370680225 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.439934, 3.1820304, 63.577057)
+affinity = 2
+behavior_mode = 0
+
+[node name="FireEnemy" parent="InitialEnemies (Stationary)" unique_id=113876268 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.586945, 0.830122, 59.40497)
+affinity = 2
+behavior_mode = 0
+
+[node name="WaterEnemy5" parent="InitialEnemies (Stationary)" unique_id=1861550544 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.664478, 0.49442697, -7.863014)
+behavior_mode = 0
+
+[node name="EarthEnemy4" parent="InitialEnemies (Stationary)" unique_id=1948474913 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8535538, 0.41071033, -6.900627)
+affinity = 1
+behavior_mode = 0
+
+[node name="FireEnemy6" parent="InitialEnemies (Stationary)" unique_id=467671444 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6129837, 0.63935447, 3.4033432)
+affinity = 2
+behavior_mode = 0
+
+[node name="PatrolEnemies" type="Node3D" parent="." unique_id=123902461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
+
+[node name="WaterPatrolEnemy" parent="PatrolEnemies" unique_id=403938521 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.433329, 2.646596, 32.00914)
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="EarthPatrolEnemy" parent="PatrolEnemies" unique_id=534259034 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.180605, 2.646596, 26.554237)
+affinity = 1
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="FirePatrolEnemy" parent="PatrolEnemies" unique_id=321078044 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.180605, 2.646596, 26.554237)
+affinity = 2
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="WaterPatrolEnemy3" parent="PatrolEnemies" unique_id=1049838728 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(0.08226904, 0, 0.99661016, 0, 1, 0, -0.99661016, 0, 0.08226904, 42.82892, 2.7311082, 35.145306)
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="EarthPatrolEnemy3" parent="PatrolEnemies" unique_id=2075350880 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(0.08226904, 0, 0.99661016, 0, 1, 0, -0.99661016, 0, 0.08226904, 43.171917, 2.7311082, 30.990227)
+affinity = 1
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="FirePatrolEnemy3" parent="PatrolEnemies" unique_id=267760665 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(0.08226904, 0, 0.99661016, 0, 1, 0, -0.99661016, 0, 0.08226904, 43.494705, 2.7311082, 40.90172)
+affinity = 2
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="WaterPatrolEnemy2" parent="PatrolEnemies" unique_id=202963679 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.949234, 2.757513, 52.638454)
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="EarthPatrolEnemy2" parent="PatrolEnemies" unique_id=37370537 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.949234, 2.757513, 52.638454)
+affinity = 1
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="FirePatrolEnemy2" parent="PatrolEnemies" unique_id=1499754147 instance=ExtResource("5_mtpqd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.50106, 2.757513, 46.745373)
+affinity = 2
+behavior_mode = 1
+patrol_offset = Vector3(3.5, 0, 0)
+
+[node name="EnemySpawnTimer" type="Timer" parent="." unique_id=1213935042]
+
+[node name="TutorialWaveSpawner" parent="." unique_id=1865327595 instance=ExtResource("7_t6fmc")]
+transform = Transform3D(-0.003927026, 0, 0.9999923, 0, 1, 0, -0.9999923, 0, -0.003927026, -86.40615, 4.657746, -18.128706)
+
+[node name="HUD" parent="." unique_id=1217219530 instance=ExtResource("6_0qxm0")]
+
+[node name="EnemySpawnPoints" type="Node3D" parent="." unique_id=1814942137]
